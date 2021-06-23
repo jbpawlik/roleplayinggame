@@ -11,6 +11,7 @@ export class Character extends Attributes {
   constructor(health, attack, defense) {
     super(health, attack, defense)
     this.name = name;
+    this.turn = "hero";
   }
 
   equipItems(Items) {
@@ -26,16 +27,25 @@ export class Character extends Attributes {
     }
   }
 
+  whosTurn() {
+    if (this.turn === 'hero') {
+      this.turn = 'villain';
+    } else {
+      this.turn = 'hero';
+    };
+  }
+
   dealDamage(character) {
-    let damage = this.attack
+    let random = Math.floor(Math.random()*(10)+1)
+    let damage = this.attack + random
     if (this.type === 'hero') {
       character.health -= damage
     } if (this.type === 'villain') {
-      hero.health -= damage
+      character.health -= damage
     } 
   }
 }
-// Math.floor(Math.random()*(6)+1)
+
 
 
 

@@ -32,6 +32,11 @@ describe ('Character', () => {
     hero.dealDamage(villain)
     expect(villain.health).toBeLessThan(100)
   })
+
+  test('attack should deal damage to villain if the character turn is hero', () => {
+    villain.dealDamage(hero)
+    expect(hero.health).toBeLessThan(100)
+  })
 })
 
 describe ('Attributes', () => {
