@@ -14,4 +14,8 @@ describe ('Character', () => {
   test('character class should have attack property with value of 10', () => {
     expect(hero.attack).toEqual(10);
   })
+
+  test('character class should have defense property with value of 10', () => {
+    expect(hero.defense).toEqual(10);
+  })
 });
