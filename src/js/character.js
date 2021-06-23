@@ -6,7 +6,7 @@ export class Attributes {
   }
 }
 
-
+ 
 export class Character extends Attributes {
   constructor(health, attack, defense, name) {
     super(health, attack, defense)
