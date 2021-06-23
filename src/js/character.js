@@ -11,7 +11,8 @@ export class Character extends Attributes {
   constructor(health, attack, defense) {
     super(health, attack, defense)
     this.name = name;
-    this.turn = "hero";
+    this.turn = '';
+    this.imDead = '';
   }
 
   equipItems(Items) {
@@ -28,11 +29,11 @@ export class Character extends Attributes {
   }
 
   whosTurn() {
-    if (this.turn === 'hero') {
+    if (this.type === 'hero') {
       this.turn = 'villain';
     } else {
       this.turn = 'hero';
-    };
+    }
   }
 
   dealDamage(character) {
@@ -43,6 +44,14 @@ export class Character extends Attributes {
     } if (this.type === 'villain') {
       character.health -= damage
     } 
+  }
+
+  amIDead(character) {
+    if (this.type === 'hero' && character.health <= 0) {
+      this.imDead = true;
+    } else if (this.type === 'villain' && character.health <= 0) {
+      this.imDead = true;
+    }
   }
 }
 
