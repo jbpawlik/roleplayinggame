@@ -1,8 +1,7 @@
 export default class Character {
-  constructor(name, health, attack, defense) {
-    this.name = name
+  constructor(health, attack, defense) {
     this.health = 100
-    this.attack = attack
+    this.attack = 10
     this.defense = defense
   }
 }
