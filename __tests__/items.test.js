@@ -12,8 +12,8 @@ describe ("Items", () => {
   });
 
   test ('Character class should have armor, weapon, and potion property', () => {
-      expect(item.armor).toBe("mail");
-      expect(item.weapon).toBe('sword');
-      expect(item.potion).toBe('health');
+    expect(item.armor).toBe("mail");
+    expect(item.weapon).toBe('sword');
+    expect(item.potion).toBe('health');
   })
 });
