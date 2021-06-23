@@ -5,3 +5,5 @@ export default class Character {
     this.defense = 10
   }
 }
+
+
