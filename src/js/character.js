@@ -1,5 +1,4 @@
-// export 
-class Attributes {
+export class Attributes {
   constructor(health, attack, defense) {
     this.health = 100
     this.attack = 10
@@ -8,8 +7,7 @@ class Attributes {
 }
 
 
-// export 
-class Character extends Attributes {
+export class Character extends Attributes {
   constructor(health, attack, defense) {
     super(health, attack, defense)
     this.name = name;
@@ -26,20 +24,17 @@ class Character extends Attributes {
     } else if (this.type === 'villain') {
       this.attack += 20;
     }
-
   }
 
+  dealDamage(character) {
+    let damage = this.attack
+    if (this.type === 'hero') {
+      character.health -= damage
+    } if (this.type === 'villain') {
+      hero.health -= damage
+    } 
+  }
 }
-
-attack(Character) {
-  let damage = Math.floor(Math.RandomSource()*(6)+1)
-  if (this.Character === 'hero') {
-    villain.health -= damage
-  } if (this.Character === 'villain') {
-    hero.health -= damage
-  } 
-}
-
 // Math.floor(Math.random()*(6)+1)
 
 

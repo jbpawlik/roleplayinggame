@@ -4,10 +4,14 @@ import Items from '../src/js/items.js'
 describe ('Character', () => {
   let villain;
   let items;
+  let hero;
 
   beforeEach(() => {
     villain = new Character();
+    hero = new Character();
     items = new Items('chainmail', 'sword', 'potion');
+    villain.changeAttributes('villain');
+    hero.changeAttributes('hero');
   })
 
   test('Character class should exist', () => {
@@ -23,7 +27,12 @@ describe ('Character', () => {
     villain.changeAttributes('hero');
     expect(villain.type).toBe('hero');
   })
-  
+
+  test('attack should deal damage to villain if the character turn is hero', () => {
+    hero.dealDamage(villain)
+    expect(villain.health).toBeLessThan(100)
+  })
+})
 
 describe ('Attributes', () => {
   let hero;
@@ -43,5 +52,4 @@ describe ('Attributes', () => {
   test('attributes class should have defense property with value of 10', () => {
     expect(hero.defense).toEqual(10);
   })
-});
 });
