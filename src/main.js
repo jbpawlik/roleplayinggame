@@ -9,11 +9,11 @@ console.log(Attributes);
 console.log(Items);
 
 $(document).ready(function() {
+
   $('#name').submit(function(event) {
     event.preventDefault();
     const userName = $('#enterName').val();
-    $('#nameOutput').text(userName);
-    $('#name').hide();
+    $('#villainName').text(userName);
 
   });
 
@@ -22,16 +22,16 @@ $(document).ready(function() {
   let general = new Items('chainmail', 'gun blade', 'health');
   let rogue = new Items('leather', 'dagger', 'stealth');
   let mage = new Items('robe', 'staff', 'mana');
-  villain.changeAttributes();
-  hero.changeAttributes();
+  villain.changeAttributes('villain');
+  hero.changeAttributes('hero');
 
-  // $('#rollCharacter').click(function(event) {
-  //   event.preventDefault;
+  $('#h-health').text(hero.health);
+  $('#h-defense').text(hero.defense);
+  $('#h-attack').text(hero.attack);
 
-    
-  // });
 
-  $('#classSelector').click(function() {
+  $('.radio').click(function(event) {
+    event.preventDefault();
 
     const classVal = $('input:radio:checked[name=classSelect]').val();
 
@@ -51,19 +51,35 @@ $(document).ready(function() {
       $('#weapon').text(mage.weapon);
       $('#potion').text(mage.potion);
     }
+
     $('#v-health').text(villain.health);
     $('#v-defense').text(villain.defense);
     $('#v-attack').text(villain.attack);
   });
-  villain.whosTurn();
+
+
 
   $('#attackButton').click(function() {
-    villain.dealDamage(hero);
-    console.log('Im a hero', hero);
-    console.log(villain);
+    if (villain.turn === "villain") {
+      villain.dealDamage(hero);
+      hero.amIDead(hero);
+      villain.turn = 'hero';
+      if (hero.imDead === true) {
+        $('#result').text(`You have crushed the hero!`);
+      }
+    } else {
+      hero.dealDamage(villain);
+      villain.amIDead(villain)
+      villain.turn = 'villain';
+      if (villain.imDead === true) {
+        $('#result').html(`You have destroyed the villain!`);
+      }
+    }
+    $('#v-health').text(villain.health);
+    $('#v-defense').text(villain.defense);
+    $('#v-attack').text(villain.attack);
+    $('#h-health').text(hero.health);
+    $('#h-defense').text(hero.defense);
+    $('#h-attack').text(hero.attack);
   });
 });
-
-
-
-

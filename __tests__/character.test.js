@@ -36,7 +36,7 @@ describe ('Character', () => {
 
   test('attack should deal damage to villain if the character turn is hero', () => {
     hero.dealDamage(villain);
-    expect(villain.health).toBeLessThan(100);
+    expect(villain.health).toBeLessThan(300);
   });
 
   test('attack should deal damage to villain if the character turn is hero', () => {
@@ -64,7 +64,7 @@ describe ('Character', () => {
 
   test('whosTurn should know if its hero turn if value equals hero', () => {
     hero.whosTurn('hero');
-    expect(hero.turn).toEqual('villain');
+    expect(hero.turn).toEqual('hero');
   });
 
   test('whosTurn should know if its hero turn if value equals hero', () => {

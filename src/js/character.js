@@ -37,13 +37,13 @@ export class Character extends Attributes {
       this.defense +=20;
       this.health +=20;
     } else if (this.type === 'villain') {
-      this.attack += 20;
-      this.health -= 50;
+      this.attack += 30;
+      this.health += 100;
     }
   }
 
   whosTurn() {
-    if (this.type === 'hero') {
+    if (this.turn === 'hero') {
       this.turn = 'villain';
     } else {
       this.turn = 'hero';
@@ -55,7 +55,7 @@ export class Character extends Attributes {
     let damage = this.attack + random;
     if (this.type === 'hero') {
       character.health -= (damage - character.defense);
-    } if (this.type === 'villain') {
+    } else if (this.type === 'villain') {
       character.health -= (damage - character.defense);
     }
   }
@@ -73,8 +73,10 @@ export class Character extends Attributes {
 
   amIDead(character) {
     if (this.type === 'hero' && character.health <= 0) {
+      character.health = 0;
       this.imDead = true;
     } else if (this.type === 'villain' && character.health <= 0) {
+      character.health = 0;
       this.imDead = true;
     }
   }

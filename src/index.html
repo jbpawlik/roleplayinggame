@@ -22,7 +22,7 @@
         </form>
         <h2 id="nameOutput"></h2>
         <h4>Choose class</h4>
-        <form id="classSelector">
+        <div id="classSelector">
           <div class="radio">
             <label>
               <input type="radio" name="classSelect" value="general">Brawler
@@ -37,16 +37,16 @@
             <label>
               <input type="radio" name="classSelect" value="mage">Blaster
             </label>
-          </form>
+        </div>
         <h4>Inventory</h4>
         <h6>Weapon: <span id="weapon"></span></h6>
         <h6>Armor: <span id="armor"></span></h6>
         <h6>Potion: <span id="potion"></span></h6>
-        <button type="submit" class="button" class="rollCharacter">Roll character</button>
+        <button type="submit" class="btn-lg btn-ye" class="rollCharacter">Roll character</button>
         </div>
       </div>
       <div class="col-4" class="villains col" class="box transform">
-        <h2>Villains</h2>
+        <h2 id="villainName">Villains</h2>
         <img src="https://i.pinimg.com/originals/15/e2/36/15e236a99208e5fadea4d8c08f19ab5d.jpg"  alt="Dastardly villain" />
         <div class="stats">
           <h5>Health: <span id="v-health"></span></h5>
@@ -54,8 +54,8 @@
           <h5>Attack: <span id="v-attack"></span></h5>
         </div>
         <div>
-          <button type="submit" class="button" id="attackButton">Attack!</button>
-          <button type="submit" class="button" id="usePotion">Drink Potion</button>
+          <button type="submit" class="btn-lg btn-danger" id="attackButton">Attack!</button>
+          <button type="submit" class="btn-lg btn-success" id="usePotion">Drink Potion</button>
         </div>
       </div>
       <div class="col-4" class="heroes col" class="box transform">
@@ -66,6 +66,8 @@
           <h5>Defense: <span id="h-defense"></span></h5>
           <h5>Attack: <span id="h-attack"></span></h5>
         </div>
+      </div>
+      <div id="result">
       </div>
   </div>
 </body>
