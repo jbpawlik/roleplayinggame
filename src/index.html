@@ -3,7 +3,7 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Cinzel:wght@700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,46 +22,49 @@
         </form>
         <h2 id="nameOutput"></h2>
         <h4>Choose class</h4>
-        <div class="radio">
-          <label> 
-            <input type="radio" name="classSelect" value="warrior" checked>Brawler
-          </label>
-        </div>
-        <div class="radio">
-          <label> 
-            <input type="radio" name="classSelect" value="rogue" checked>Slasher
-          </label>
-        </div>
-        <div class="radio">
-          <label> 
-            <input type="radio" name="classSelect" value="mage" checked>Blaster
-          </label>
-        </div>
+        <form id="classSelector">
+          <div class="radio">
+            <label>
+              <input type="radio" name="classSelect" value="general">Brawler
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="classSelect" value="rogue">Slasher
+            </label>
+          </div>
+          <div class="radio">
+            <label>
+              <input type="radio" name="classSelect" value="mage">Blaster
+            </label>
+          </form>
         <h4>Inventory</h4>
         <h6>Weapon: <span id="weapon"></span></h6>
         <h6>Armor: <span id="armor"></span></h6>
         <h6>Potion: <span id="potion"></span></h6>
+        <button type="submit" class="button" class="rollCharacter">Roll character</button>
+        </div>
       </div>
       <div class="col-4" class="villains col" class="box transform">
         <h2>Villains</h2>
         <img src="https://i.pinimg.com/originals/15/e2/36/15e236a99208e5fadea4d8c08f19ab5d.jpg"  alt="Dastardly villain" />
         <div class="stats">
-          <h5>Health: <span class="v-health"></span></h5>
-          <h5>Defense: <span class="v-stamina"></span></h5>
-          <h5>Attack Damage: <span class="v-attack"></span></h5>
+          <h5>Health: <span id="v-health"></span></h5>
+          <h5>Defense: <span id="v-defense"></span></h5>
+          <h5>Attack: <span id="v-attack"></span></h5>
         </div>
         <div>
           <button type="submit" class="button" id="attackButton">Attack!</button>
           <button type="submit" class="button" id="usePotion">Drink Potion</button>
         </div>
       </div>
-      <div class="col-4" class="heroes col" class="box transform"> 
+      <div class="col-4" class="heroes col" class="box transform">
         <h2>Heroes</h2>
         <img src="https://www.seekpng.com/png/detail/171-1716695_kid-goku-34-by-superjmanplay2-on-deviantart-kid.png" alt="A dark wizard" />
         <div class="stats">
-          <h5>Health: <span class="h-health"></span></h5>
-          <h5>Defense: <span class="h-stamina"></span></h5>
-          <h5>Attack Damage: <span class="h-attack"></span></h5>
+          <h5>Health: <span id="h-health"></span></h5>
+          <h5>Defense: <span id="h-defense"></span></h5>
+          <h5>Attack: <span id="h-attack"></span></h5>
         </div>
       </div>
   </div>

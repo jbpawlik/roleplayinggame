@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import Items from "../src/js/items";
 
 describe ("Items", () => {
@@ -5,7 +6,7 @@ describe ("Items", () => {
 
   beforeEach(() => {
     item = new Items('mail', 'sword', 'health');
-});
+  });
 
   test ('Create Items class', () => {
     expect(item).toBeDefined();
@@ -15,5 +16,5 @@ describe ("Items", () => {
     expect(item.armor).toBe("mail");
     expect(item.weapon).toBe('sword');
     expect(item.potion).toBe('health');
-  })
+  });
 });

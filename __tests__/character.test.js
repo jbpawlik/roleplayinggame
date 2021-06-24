@@ -1,6 +1,9 @@
-import {Character, Attributes} from '../src/js/character.js'
-import Items from '../src/js/items.js'
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
+import {Character, Attributes} from '../src/js/character.js';
+import Items from '../src/js/items.js';
 
+// eslint-disable-next-line no-undef
 describe ('Character', () => {
   let villain;
   let items;
@@ -68,12 +71,12 @@ describe ('Character', () => {
     villain.whosTurn('hero');
     expect(villain.turn).toEqual('hero');
   });
-  
+
   test('amIDead will know when hero is dead if health is less than or equal to 0', () => {
     hero.health = 0;
     hero.amIDead(hero);
     expect(hero.imDead).toEqual(true);
-  })
+  });
 });
 
 describe ('Attributes', () => {
@@ -86,12 +89,12 @@ describe ('Attributes', () => {
   test ('create attributes class with health property', ()=> {
     expect(hero.health).toEqual(100);
   });
-  
+
   test('attributes class should have attack property with value of 10', () => {
-    expect(hero.attack).toEqual(10);
+    expect(hero.attack).toEqual(20);
   });
 
   test('attributes class should have defense property with value of 10', () => {
-    expect(hero.defense).toEqual(10);
+    expect(hero.defense).toEqual(20);
   });
 });

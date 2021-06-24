@@ -1,8 +1,8 @@
 export class Attributes {
   constructor() {
     this.health = 100;
-    this.attack = 10;
-    this.defense = 10;
+    this.attack = 20;
+    this.defense = 20;
   }
 }
 
@@ -15,19 +15,19 @@ export class Character extends Attributes {
   }
 
   equipItems(Items) {
-    this.items = Items
+    this.items = Items;
     if (this.items === 'warrior') {
-      this.attack += 10;
-      this.defense += 10;
-      this.health += 20;
+      this.attack += 5;
+      this.defense += 5;
+      this.health += 10;
     } else if (this.items === 'rogue') {
-      this.defense += 20;
+      this.defense += 10;
       this.attack -= 5;
-      this.health -= 10;
+      this.health -= 5;
     } else {
-      this.attack += 25;
+      this.attack += 20;
       this.defense -= 10;
-      this.health -= 20;
+      this.health -= 10;
     }
   }
 
@@ -35,7 +35,7 @@ export class Character extends Attributes {
     this.type = type;
     if (this.type === 'hero') {
       this.defense +=20;
-      this.health +=20
+      this.health +=20;
     } else if (this.type === 'villain') {
       this.attack += 20;
       this.health -= 50;
@@ -51,13 +51,13 @@ export class Character extends Attributes {
   }
 
   dealDamage(character) {
-    let random = Math.floor(Math.random()*(10)+1)
-    let damage = this.attack + random
+    let random = Math.floor(Math.random()*(10)+1);
+    let damage = this.attack + random;
     if (this.type === 'hero') {
       character.health -= (damage - character.defense);
     } if (this.type === 'villain') {
       character.health -= (damage - character.defense);
-    } 
+    }
   }
 
   takePotion() {
@@ -68,7 +68,7 @@ export class Character extends Attributes {
     } else if (this.items === 'mage') {
       this.attack += 10;
     }
-    delete this.items.potion
+    delete this.items.potion;
   }
 
   amIDead(character) {
