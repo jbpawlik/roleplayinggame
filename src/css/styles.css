@@ -1,1 +1,22 @@
-
+body {
+  font-family: 'Cinzel', serif;
+}
+#jumbotron {
+  text-align: center;
+  margin: 2em;
+  border: solid .25em black;
+  padding: 1em;
+}
+#charSelect {
+  border: solid .25em black;
+}
+.col-3 {
+  padding-top: 4em;
+  margin: 1em;
+}
+img {
+  height: 20em;
+}
+input[type=radio] {
+  margin-right:1em ;
+}

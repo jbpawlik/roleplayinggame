@@ -4,7 +4,7 @@ describe ("Items", () => {
   let item;
 
   beforeEach(() => {
-    item = new Items('mail', 'sword', 'health') 
+    item = new Items('mail', 'sword', 'health');
 });
 
   test ('Create Items class', () => {

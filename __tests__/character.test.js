@@ -13,8 +13,8 @@ describe ('Character', () => {
     villain.changeAttributes('villain');
     hero.changeAttributes('hero');
     let warrior = new Items('chainmail', 'sword', 'health');
-    let rogue = new Items('leather', 'dagger', 'stealth')
-    let mage = new Items('robe', 'staff', 'mana')
+    let rogue = new Items('leather', 'dagger', 'stealth');
+    let mage = new Items('robe', 'staff', 'mana');
   });
 
   test('Character class should exist', () => {
@@ -38,7 +38,7 @@ describe ('Character', () => {
 
   test('attack should deal damage to villain if the character turn is hero', () => {
     villain.dealDamage(hero);
-    expect(hero.health).toBeLessThan(100);
+    expect(hero.health).toBeLessThan(120);
   });
 
   test('takePotion should increase warrior health', () => {
@@ -70,7 +70,7 @@ describe ('Character', () => {
   });
   
   test('amIDead will know when hero is dead if health is less than or equal to 0', () => {
-    hero.health = 0
+    hero.health = 0;
     hero.amIDead(hero);
     expect(hero.imDead).toEqual(true);
   })

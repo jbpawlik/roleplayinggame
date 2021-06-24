@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@900&family=Cinzel:wght@700&display=swap" rel="stylesheet"> 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Role-Playing Game</title>
+  <title>HERO CRUSHER</title>
 </head>
 <body>
-  <div>
-    Role-Playing Game
+  <div class="container">
+    <div id='jumbotron'>
+      <h1>HERO CRUSHER</h1>
+      <h3>Heroes are invading your dungeon. Crush them all!</h3>
+    </div>
+    <div class="row">
+      <div class="col-3" id="charSelect">
+        <form id="name">
+          <input id="enterName" type="text" placeholder="Enter your name">
+        </form>
+        <h2 id="nameOutput"></h2>
+        <h3>Villain Class</h3>
+        <div class="radio">
+          <label> 
+            <input type="radio" name="classSelect" value="warrior" checked>Brawler
+          </label>
+        </div>
+        <div class="radio">
+          <label> 
+            <input type="radio" name="classSelect" value="rogue" checked>Slasher
+          </label>
+        </div>
+        <div class="radio">
+          <label> 
+            <input type="radio" name="classSelect" value="mage" checked>Blaster
+          </label>
+        </div>
+      </div>
+      <div class="col-3" class="villains col">
+        <img src="https://i.pinimg.com/originals/15/e2/36/15e236a99208e5fadea4d8c08f19ab5d.jpg"  alt="Dastardly villain" />
+        <div class="stats">
+          <h5>Health: <span class="v-health"></span></h5>
+          <h5>Defense: <span class="v-stamina"></span></h5>
+          <h5>Attack Damage: <span class="v-attack"></span></h5>
+        </div>
+      </div>
+      <div class="col-3" class="heroes col">
+        <h2>Heroes</h2>
+        <img src="https://www.seekpng.com/png/detail/171-1716695_kid-goku-34-by-superjmanplay2-on-deviantart-kid.png" alt="A dark wizard" />
+        <div class="stats">
+          <h5>Health: <span class="h-health"></span></h5>
+          <h5>Defense: <span class="h-stamina"></span></h5>
+          <h5>Attack Damage: <span class="h-attack"></span></h5>
+        </div>
+      </div>
   </div>
 </body>
 </html>

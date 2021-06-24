@@ -1,14 +1,14 @@
 export class Attributes {
-  constructor(health, attack, defense) {
-    this.health = 100
-    this.attack = 10
-    this.defense = 10
+  constructor() {
+    this.health = 100;
+    this.attack = 10;
+    this.defense = 10;
   }
 }
 
 export class Character extends Attributes {
   constructor(health, attack, defense) {
-    super(health, attack, defense)
+    super(health, attack, defense);
     this.name = name;
     this.turn = '';
     this.imDead = '';
@@ -32,7 +32,7 @@ export class Character extends Attributes {
   }
 
   changeAttributes(type) {
-    this.type = type
+    this.type = type;
     if (this.type === 'hero') {
       this.defense +=20;
       this.health +=20
@@ -54,9 +54,9 @@ export class Character extends Attributes {
     let random = Math.floor(Math.random()*(10)+1)
     let damage = this.attack + random
     if (this.type === 'hero') {
-      character.health -= damage
+      character.health -= (damage - character.defense);
     } if (this.type === 'villain') {
-      character.health -= damage
+      character.health -= (damage - character.defense);
     } 
   }
 
