@@ -12,6 +12,9 @@ describe ('Character', () => {
     items = new Items('chainmail', 'sword', 'potion');
     villain.changeAttributes('villain');
     hero.changeAttributes('hero');
+    let warrior = new Items('chainmail', 'sword', 'health');
+    let rogue = new Items('leather', 'dagger', 'stealth')
+    let mage = new Items('robe', 'staff', 'mana')
   });
 
   test('Character class should exist', () => {
@@ -19,8 +22,8 @@ describe ('Character', () => {
   });
 
   test('equipItems should add items to Character', () => {
-    villain.equipItems('chainmail', 'sword', 'potion');
-    expect(villain.items).toBe('chainmail', 'sword', 'potion');
+    villain.equipItems('warrior');
+    expect(villain.items).toBe('warrior');
   });
 
   test('changeAttributes should change the attributes when type changes', () => {
@@ -38,6 +41,24 @@ describe ('Character', () => {
     expect(hero.health).toBeLessThan(100);
   });
 
+  test('takePotion should increase warrior health', () => {
+    hero.equipItems('warrior');
+    hero.takePotion();
+    expect(hero.health).toBeGreaterThan(100);
+  });
+
+  test('takePotion should increase warrior health', () => {
+    hero.equipItems('rogue');
+    hero.takePotion();
+    expect(hero.defense).toBeGreaterThan(10);
+  });
+
+  test('takePotion should increase warrior health', () => {
+    hero.equipItems('mage');
+    hero.takePotion();
+    expect(hero.attack).toBeGreaterThan(10);
+  });
+
   test('whosTurn should know if its hero turn if value equals hero', () => {
     hero.whosTurn('hero');
     expect(hero.turn).toEqual('villain');
@@ -47,6 +68,7 @@ describe ('Character', () => {
     villain.whosTurn('hero');
     expect(villain.turn).toEqual('hero');
   });
+  
   test('amIDead will know when hero is dead if health is less than or equal to 0', () => {
     hero.health = 0
     hero.amIDead(hero);

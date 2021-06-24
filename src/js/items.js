@@ -5,3 +5,4 @@ export default class Items {
     this.potion = potion
   }
 }
+

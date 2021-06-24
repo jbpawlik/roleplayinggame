@@ -6,7 +6,6 @@ export class Attributes {
   }
 }
 
-
 export class Character extends Attributes {
   constructor(health, attack, defense) {
     super(health, attack, defense)
@@ -17,14 +16,29 @@ export class Character extends Attributes {
 
   equipItems(Items) {
     this.items = Items
+    if (this.items === 'warrior') {
+      this.attack += 10;
+      this.defense += 10;
+      this.health += 20;
+    } else if (this.items === 'rogue') {
+      this.defense += 20;
+      this.attack -= 5;
+      this.health -= 10;
+    } else {
+      this.attack += 25;
+      this.defense -= 10;
+      this.health -= 20;
+    }
   }
 
   changeAttributes(type) {
     this.type = type
     if (this.type === 'hero') {
       this.defense +=20;
+      this.health +=20
     } else if (this.type === 'villain') {
       this.attack += 20;
+      this.health -= 50;
     }
   }
 
@@ -44,6 +58,16 @@ export class Character extends Attributes {
     } if (this.type === 'villain') {
       character.health -= damage
     } 
+  }
+
+  takePotion() {
+    if (this.items === 'warrior') {
+      this.health += 10;
+    } else if (this.items === 'rogue') {
+      this.defense += 10;
+    } else if (this.items === 'mage') {
+      this.attack += 10;
+    }
   }
 
   amIDead(character) {
