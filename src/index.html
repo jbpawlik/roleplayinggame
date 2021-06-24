@@ -21,7 +21,7 @@
           <input id="enterName" type="text" placeholder="Enter your name">
         </form>
         <h2 id="nameOutput"></h2>
-        <h3>Villain Class</h3>
+        <h4>Choose class</h4>
         <div class="radio">
           <label> 
             <input type="radio" name="classSelect" value="warrior" checked>Brawler
@@ -37,16 +37,25 @@
             <input type="radio" name="classSelect" value="mage" checked>Blaster
           </label>
         </div>
+        <h4>Inventory</h4>
+        <h6>Weapon: <span id="weapon"></span></h6>
+        <h6>Armor: <span id="armor"></span></h6>
+        <h6>Potion: <span id="potion"></span></h6>
       </div>
-      <div class="col-3" class="villains col">
+      <div class="col-4" class="villains col" class="box transform">
+        <h2>Villains</h2>
         <img src="https://i.pinimg.com/originals/15/e2/36/15e236a99208e5fadea4d8c08f19ab5d.jpg"  alt="Dastardly villain" />
         <div class="stats">
           <h5>Health: <span class="v-health"></span></h5>
           <h5>Defense: <span class="v-stamina"></span></h5>
           <h5>Attack Damage: <span class="v-attack"></span></h5>
         </div>
+        <div>
+          <button type="submit" class="button" id="attackButton">Attack!</button>
+          <button type="submit" class="button" id="usePotion">Drink Potion</button>
+        </div>
       </div>
-      <div class="col-3" class="heroes col">
+      <div class="col-4" class="heroes col" class="box transform"> 
         <h2>Heroes</h2>
         <img src="https://www.seekpng.com/png/detail/171-1716695_kid-goku-34-by-superjmanplay2-on-deviantart-kid.png" alt="A dark wizard" />
         <div class="stats">

@@ -68,6 +68,7 @@ export class Character extends Attributes {
     } else if (this.items === 'mage') {
       this.attack += 10;
     }
+    delete this.items.potion
   }
 
   amIDead(character) {
